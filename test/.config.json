@@ -1,0 +1,11 @@
+{
+    "jwtek": {
+        "keys": {
+            "folder": "custom/keys"
+        },
+        "external_jwks": {
+            "folder": "custom/jwks",
+            "cache_min": 10
+        }
+    }
+}
