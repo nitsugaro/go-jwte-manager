@@ -39,7 +39,7 @@ func init() {
 			panic(err.Error())
 		}
 
-		externalJwkStorage = &ExternalJwkStorage{NStorage: storage, CacheMin: goconf.GetOpField("jwtek.external_jwks.cache_min", int64(60))}
+		externalJwkStorage = &ExternalJwkStorage{NStorage: storage, CacheSeconds: goconf.GetOpField("jwtek.external_jwks.cache_seconds", int64(60))}
 
 		keyStorage, _ = nstore.New[*Key](goconf.GetOpField("jwtek.keys.folder", "jwtek/keys"))
 

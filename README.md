@@ -9,6 +9,7 @@ jwtek is a Go package for managing, storing, and using cryptographic keys (JWKs)
 - JWT validation utilities that retrieve keys from JWT headers (jwk) or URIs (jku).
 
 ## Key Features
+
 ```
 Supports RSA, ECDSA, Ed25519, and HMAC keys.
 Automatic loading from disk and default key generation if none exist.
@@ -26,10 +27,10 @@ goconf.LoadConfig() //this will load .config.json by default
 keyStorage := jwtek.GetKeyStorage()
 keys, total := keyStorage.Query(
 	jwtek.ChainCondition(
-        jwtek.IsActive, 
-        jwtek.IsNotExpired, 
-        jwtek.IsAlg(jwtek.ALG(jwtek.ES256)), 
-        jwtek.IsPurpose(jwtek.OIDC_PURPOSE), 
+        jwtek.IsActive,
+        jwtek.IsNotExpired,
+        jwtek.IsAlg(jwtek.ALG(jwtek.ES256)),
+        jwtek.IsPurpose(jwtek.OIDC_PURPOSE),
         jwtek.IsSigUse,
     ),
 	2,
@@ -48,15 +49,15 @@ keyStorage.Delete("ffb09871-5bec-4bc8-ac3d-b941675e2494")
 
 ```json
 {
-    "jwtek": {
-        "keys": {
-            "folder": "custom/keys",    //default: jwtek/keys/
-            "generate_defaults": false  //default: true
-        },
-        "external_jwks": {
-            "folder": "custom/jwks",    //default: jwtek/jwks/
-            "cache_min": 10             //default: 10
-        }
+  "jwtek": {
+    "keys": {
+      "folder": "custom/keys", //default: jwtek/keys/
+      "generate_defaults": false //default: true
+    },
+    "external_jwks": {
+      "folder": "custom/jwks", //default: jwtek/jwks/
+      "cache_seconds": 60 //default: 60
     }
+  }
 }
 ```

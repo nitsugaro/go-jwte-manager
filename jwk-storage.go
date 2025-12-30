@@ -25,7 +25,7 @@ type Jwks struct {
 type ExternalJwkStorage struct {
 	*nstore.NStorage[*Jwks]
 
-	CacheMin int64
+	CacheSeconds int64 `json:"cache_seconds"`
 }
 
 var httpClient, _ = goutils.NewHttpClient(&goutils.ClientConfig{Timeout: 20 * time.Second})
@@ -33,7 +33,7 @@ var httpClient, _ = goutils.NewHttpClient(&goutils.ClientConfig{Timeout: 20 * ti
 func (sj *ExternalJwkStorage) LoadOrSearch(uri string) ([]goutils.DefaultMap, error) {
 	uriHash := encoding.EncodeBase64URL((crypto.HashSHA1(uri)))
 
-	if jwkCache, err := sj.Load(uriHash); err == nil && time.Now().Unix()-jwkCache.Iat < sj.CacheMin {
+	if jwkCache, err := sj.Load(uriHash); err == nil && time.Now().Unix()-jwkCache.Iat < sj.CacheSeconds {
 		return jwkCache.Jwks, nil
 	}
 
