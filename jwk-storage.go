@@ -50,6 +50,7 @@ func (sj *ExternalJwkStorage) LoadOrSearch(uri string) ([]goutils.DefaultMap, er
 	jwks := &Jwks{
 		Metadata: &nstore.Metadata{ID: uriHash},
 		Jwks:     responseJwkUri.Keys,
+		Iat:      time.Now().Unix(),
 	}
 
 	if err := sj.Save(jwks); err != nil {
