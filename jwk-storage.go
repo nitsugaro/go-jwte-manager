@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/nitsugaro/go-nstore"
-	goutils "github.com/nitsugaro/go-utils"
-	"github.com/nitsugaro/go-utils/crypto"
-	"github.com/nitsugaro/go-utils/encoding"
+	goutils "github.com/nitsugaro/go-utils/v2"
+	"github.com/nitsugaro/go-utils/v2/crypto"
+	"github.com/nitsugaro/go-utils/v2/encoding"
 )
 
 type ResponseJwks struct {

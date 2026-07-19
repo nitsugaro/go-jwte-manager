@@ -5,8 +5,8 @@ import (
 	"crypto/elliptic"
 	"crypto/rsa"
 
-	"github.com/nitsugaro/go-jwte-manager/jwk"
-	"github.com/nitsugaro/go-utils/crypto"
+	"github.com/nitsugaro/go-jwte-manager/v2/jwk"
+	"github.com/nitsugaro/go-utils/v2/crypto"
 )
 
 func mustGetRandomBytes(length int) []byte {

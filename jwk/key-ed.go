@@ -4,7 +4,7 @@ import (
 	"crypto/ed25519"
 	"crypto/rand"
 
-	"github.com/nitsugaro/go-utils/encoding"
+	"github.com/nitsugaro/go-utils/v2/encoding"
 )
 
 func GenEd25519Key() (ed25519.PublicKey, ed25519.PrivateKey, error) {

@@ -4,7 +4,7 @@ import (
 	"crypto/elliptic"
 	"testing"
 
-	"github.com/nitsugaro/go-jwte-manager/jwk"
+	"github.com/nitsugaro/go-jwte-manager/v2/jwk"
 )
 
 func TestJwkKeys(t *testing.T) {

@@ -5,7 +5,7 @@ import (
 	"crypto/rsa"
 	"math/big"
 
-	"github.com/nitsugaro/go-utils/encoding"
+	"github.com/nitsugaro/go-utils/v2/encoding"
 )
 
 func GenRSAPrivateKey(bits int) (*rsa.PrivateKey, error) {

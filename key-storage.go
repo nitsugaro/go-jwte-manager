@@ -9,9 +9,9 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/nitsugaro/go-jwte-manager/jwk"
+	"github.com/nitsugaro/go-jwte-manager/v2/jwk"
 	"github.com/nitsugaro/go-nstore"
-	"github.com/nitsugaro/go-utils/encoding"
+	"github.com/nitsugaro/go-utils/v2/encoding"
 )
 
 type Key struct {

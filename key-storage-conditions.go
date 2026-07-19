@@ -43,7 +43,7 @@ func IsPurpose(purpose string) nstore.ConditionalFunc[*Key] {
 }
 
 func IsNotExpired(k *Key) bool {
-	return k.Exp < time.Now().Unix()
+	return k.Exp == 0 || k.Exp > time.Now().Unix()
 }
 
 func IsActive(k *Key) bool {

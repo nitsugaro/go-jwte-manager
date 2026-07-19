@@ -6,7 +6,7 @@ import (
 	"crypto/rand"
 	"math/big"
 
-	"github.com/nitsugaro/go-utils/encoding"
+	"github.com/nitsugaro/go-utils/v2/encoding"
 )
 
 func CurveName(c elliptic.Curve) string {
